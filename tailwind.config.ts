@@ -2,16 +2,41 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        palette: {
+          text: "#292925",
+          bg: "#FAF4E6",
+          primary: "#5AD05F",
+          secondary: "#B9DF8D",
+          accent: "#99D56C",
+        },
+      },
+      animation: {
+        "infinite-scroll": "infinite-scroll 12s linear infinite",
+      },
+      keyframes: {
+        "infinite-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+      },
+      boxShadow: {
+        "neo-brutalist": "8px 8px 0 0 #000000",
+        "neo-brutalist-hover": "4px 4px 0 0 #000000",
+      },
+
+      borderRadius: {
+        "neo-brutalist": "5px",
+      },
+      borderWidth: {
+        "neo-brutalist": "4px",
       },
     },
   },
