@@ -9,7 +9,7 @@ export function Landing({
   className?: ClassValue;
 }) {
   return (
-    <h1 className={cn("text-[45px] md:text-[90px] font-bold", className)}>
+    <h1 className={cn("text-[45px] xl:text-[90px] font-bold", className)}>
       {children}
     </h1>
   );
@@ -22,7 +22,7 @@ export function H1({
   className?: ClassValue;
 }) {
   return (
-    <h1 className={cn("text-[33px] md:text-[67px] font-bold", className)}>
+    <h1 className={cn("text-[33px] xl:text-[67px] font-bold", className)}>
       {children}
     </h1>
   );
@@ -35,7 +35,7 @@ export function H2({
   className?: ClassValue;
 }) {
   return (
-    <h2 className={cn("text-[25px] md:text-[50px] font-bold", className)}>
+    <h2 className={cn("text-[25px] xl:text-[50px] font-bold", className)}>
       {children}
     </h2>
   );
@@ -48,7 +48,7 @@ export function H3({
   className?: ClassValue;
 }) {
   return (
-    <h3 className={cn(" text-[20px] md:text-[37px] font-bold", className)}>
+    <h3 className={cn(" text-[20px] xl:text-[37px] font-bold", className)}>
       {children}
     </h3>
   );
@@ -61,7 +61,7 @@ export function H4({
   className?: ClassValue;
 }) {
   return (
-    <h4 className={cn(" text-[18px] md:text-[28px] font-medium", className)}>
+    <h4 className={cn(" text-[18px] xl:text-[28px] font-medium", className)}>
       {children}
     </h4>
   );
@@ -84,7 +84,7 @@ export function ButtonText({
   className?: ClassValue;
 }) {
   return (
-    <p className={cn("text-[20px] md:text-[40px] font-bold ", className)}>
+    <p className={cn("text-[20px] xl:text-[40px] font-bold ", className)}>
       {children}
     </p>
   );
