@@ -76,7 +76,7 @@ function EmojisContainer({ disabled }: { disabled?: boolean }) {
             />
           </div>
           <H2 className="w-[150px] md:w-[200px] text-palette-text h-fit text-center">
-            "wat"
+            {`"wat"`}
           </H2>
         </div>
         <div className=" shrink-0   h-[120px] md:h-[180px]  md:w-full w-[75vw] rounded-[5px]  bg-palette-bg flex flex-row items-center justify-center px-4 py-3 gap-[35px] border-neo-brutalist border-black shadow-neo-brutalist">
@@ -90,7 +90,7 @@ function EmojisContainer({ disabled }: { disabled?: boolean }) {
             />
           </div>
           <H2 className="w-[150px] md:w-[200px] text-palette-text h-fit text-center">
-            "lel"
+            {`"lel"`}
           </H2>
         </div>
         <div className=" shrink-0  h-[120px] md:h-[180px]  md:w-full w-[75vw] rounded-[5px]  bg-palette-bg flex flex-row items-center justify-center px-4 py-3 gap-[35px] border-neo-brutalist border-black shadow-neo-brutalist">
@@ -104,7 +104,7 @@ function EmojisContainer({ disabled }: { disabled?: boolean }) {
             />
           </div>
           <H2 className="w-[150px] md:w-[200px] text-palette-text h-fit text-center">
-            "mwah"
+            {`"mwah"`}
           </H2>
         </div>
       </div>
