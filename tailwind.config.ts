@@ -15,16 +15,21 @@ const config: Config = {
           bg: "#FAF4E6",
           primary: "#5AD05F",
           secondary: "#B9DF8D",
-          accent: "#99D56C",
+          accent: "#a5f3fc",
         },
       },
       animation: {
-        "infinite-scroll": "infinite-scroll 12s linear infinite",
+        "infinite-scroll-x": "infinite-scroll-x 12s linear infinite",
+        "infinite-scroll-y": "infinite-scroll-y 10s linear infinite ",
       },
       keyframes: {
-        "infinite-scroll": {
+        "infinite-scroll-x": {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(-100%)" },
+        },
+        "infinite-scroll-y": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(-103%)" },
         },
       },
       boxShadow: {

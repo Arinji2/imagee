@@ -1,8 +1,8 @@
-import Button from "@/primatives/button";
 import { ButtonText, H2, H4, Landing } from "@/primatives/typography";
 import WidthWrapper from "@/wrappers/widthWrapper";
 import { Play } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -24,25 +24,19 @@ export default function Home() {
               </H4>
             </div>
             <div className="w-full h-fit flex flex-col items-center justify-center mt-auto gap-4">
-              <Button className="flex flex-row items-center justify-between">
+              <Link
+                href="/auth"
+                className=" px-5 transition-all ease-in-out duration-200 hover:shadow-neo-brutalist-hover  hover:bg-palette-secondary group xl:px-[45px] py-[10px] w-full h-fit bg-palette-bg xl:w-[680px] border-[4px] border-black shadow-neo-brutalist rounded-neo-brutalist  flex flex-row items-center justify-between "
+              >
                 <ButtonText className="  text-palette-text">
-                  GET STARTED
+                  AUTHENTICATE
                 </ButtonText>
                 <Play
                   size={40}
                   color="#292925"
                   className="group-hover:rotate-180 transition-transform ease-in-out duration-500 rotate-0"
                 />
-              </Button>
-
-              <Button className="flex flex-row items-center justify-between hover:bg-palette-bg bg-palette-secondary">
-                <ButtonText className="  text-palette-text">LOGIN</ButtonText>
-                <Play
-                  size={40}
-                  color="#292925"
-                  className="group-hover:rotate-180 transition-transform ease-in-out duration-500 rotate-0"
-                />
-              </Button>
+              </Link>
             </div>
           </div>
 
@@ -63,7 +57,7 @@ function EmojisContainer({ disabled }: { disabled?: boolean }) {
         aria-hidden={disabled}
         className={` ${
           disabled ? "xl:hidden  " : " "
-        } flex xl:flex-col  flex-row  xl:gap-12 group-hover/parent:pause xl:animate-none animate-infinite-scroll items-center justify-start  gap-4`}
+        } flex xl:flex-col  flex-row  xl:gap-12 group-hover/parent:pause xl:animate-none animate-infinite-scroll-x items-center justify-start  gap-4`}
       >
         <div className=" shrink-0  h-[120px] xl:h-[180px]  overflow-hidden xl:w-full w-[75vw] rounded-[5px]  bg-palette-bg flex flex-row items-center justify-center px-4 py-3 gap-[35px] border-neo-brutalist border-black shadow-neo-brutalist">
           <div className="xl:w-[125px] h-[111px] w-[100px] relative">

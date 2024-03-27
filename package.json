@@ -9,18 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@icons-pack/react-simple-icons": "^9.4.0",
     "clsx": "^2.1.0",
     "lucide-react": "^0.363.0",
     "next": "14.1.4",
     "pocketbase": "^0.21.1",
     "react": "^18",
     "react-dom": "^18",
+    "react-hot-toast": "^2.4.1",
     "sharp": "^0.33.3",
     "tailwind-merge": "^2.2.2"
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/react": "^18",
+    "@types/react": "18.2.62",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",

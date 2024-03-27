@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 const nunito = Nunito({ subsets: ["latin"] });
@@ -17,7 +18,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={nunito.className}>
-        <main>{children}</main>
+        <main>
+          <Toaster
+            toastOptions={{
+              position: "top-right",
+              style: {
+                boxShadow: "8px 8px 0 0 #000000",
+                borderRadius: "5px",
+                borderWidth: "4px",
+                borderColor: "#000000",
+              },
+            }}
+          />
+
+          {children}
+        </main>
       </body>
     </html>
   );
