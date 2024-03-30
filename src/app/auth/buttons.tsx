@@ -20,7 +20,13 @@ export function GoogleButton() {
         const authData = await pb
           .collection("users")
           .authWithOAuth2({ provider: "google" });
-        await AppendCookie("token", authData.token);
+
+        await AppendCookie("token", authData.token, {
+          expires: new Date(authData.meta!.expiry),
+          secure: true,
+          sameSite: "strict",
+          httpOnly: true,
+        });
         const userData = pb.authStore.model;
         if (userData?.displayName === "") {
           router.push("/auth/onboarding");
@@ -56,7 +62,12 @@ export function DiscordButton() {
         const authData = await pb
           .collection("users")
           .authWithOAuth2({ provider: "discord" });
-        await AppendCookie("token", authData.token);
+        await AppendCookie("token", authData.token, {
+          expires: new Date(authData.meta!.expiry),
+          secure: true,
+          sameSite: "strict",
+          httpOnly: true,
+        });
         const userData = pb.authStore.model;
         if (userData?.displayName === "") {
           router.push("/auth/onboarding");
@@ -95,7 +106,12 @@ export function GithubButton() {
           .collection("users")
           .authWithOAuth2({ provider: "github" });
 
-        await AppendCookie("token", authData.token);
+        await AppendCookie("token", authData.token, {
+          expires: new Date(authData.meta!.expiry),
+          secure: true,
+          sameSite: "strict",
+          httpOnly: true,
+        });
         const userData = pb.authStore.model;
         if (userData?.displayName === "") {
           router.push("/auth/onboarding");
