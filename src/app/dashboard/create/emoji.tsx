@@ -165,23 +165,34 @@ export default function Emoji({
           end
         />
       </div>
-
-      <button
-        onClick={() => {
-          setEmojiSetup((prev) => ({
-            ...prev,
-            prevStep: prev.step,
-            step: prev.step - 1,
-          }));
-        }}
-        className={`${
-          emojiSetup.step > 1
-            ? "opacity-100 "
-            : "opacity-0 pointer-events-none "
-        } text-palette-text pb-2 text-md font-bold`}
-      >
-        BACK TO STEP {emojiSetup.step - 1}
-      </button>
+      {emojiSetup.step === 1 ? (
+        <button
+          onClick={() => {
+            setEmojiSetup((prev) => ({
+              ...prev,
+              prevStep: 4,
+              step: 5,
+              hasNitro: true,
+            }));
+          }}
+          className={`text-palette-text pb-2 text-md font-bold`}
+        >
+          SKIP
+        </button>
+      ) : (
+        <button
+          onClick={() => {
+            setEmojiSetup((prev) => ({
+              ...prev,
+              prevStep: prev.step,
+              step: prev.step - 1,
+            }));
+          }}
+          className={`text-palette-text pb-2 text-md font-bold`}
+        >
+          BACK TO STEP {emojiSetup.step - 1}
+        </button>
+      )}
     </div>
   );
 }
