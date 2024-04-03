@@ -3,6 +3,7 @@
 import initPocketbase from "@/lib/initPocketbase";
 import { EmojiSchema } from "@/validations/schema";
 import { EmojiSchemaType } from "@/validations/types";
+import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import sharp from "sharp";
@@ -62,10 +63,10 @@ export default async function AddNewEmoji({
     };
   } catch (e) {
     const file = new FormData();
-    //resize image to 48*48 with sharp
+
     const buffer = await fetch(emoji).then((res) => res.arrayBuffer());
     const resizedImage = await sharp(buffer)
-      .resize(48, 48, { fit: "contain" })
+      .resize(100, 100, { fit: "contain" })
       .sharpen({
         sigma: 0.5,
         m1: 0.5,
@@ -89,6 +90,7 @@ export default async function AddNewEmoji({
     file.append("owner", pb.authStore.model!.id);
 
     await pb.collection("emojis").create(file);
+    revalidatePath("/dashboard");
     return {
       type: "success",
       message: "Emoji added successfully",

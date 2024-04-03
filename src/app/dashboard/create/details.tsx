@@ -47,7 +47,7 @@ export default function Details({
             }w-full h-[70px] transition-shadow ease-in-out duration-150 bg-palette-primary flex flex-col items-center justify-center  border-neo-brutalist border-black `}
           >
             <H4 className="text-palette-text font-bold text-[14px] xl:text-[20px]">
-              With Username
+              Prefixed
             </H4>
             <P className="text-palette-text text-center text-[12px]">
               Use with username, no minimum length
@@ -64,7 +64,7 @@ export default function Details({
             }w-full h-[70px] transition-shadow ease-in-out duration-150 bg-palette-bg flex flex-col items-center justify-center  border-neo-brutalist border-black `}
           >
             <H4 className="text-palette-text font-bold text-[14px] xl:text-[20px]">
-              Without Username
+              Not Prefixed
             </H4>
             <P className="text-palette-text text-center text-[12px]">
               Use without username, minimum length of 3

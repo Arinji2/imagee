@@ -30,6 +30,7 @@ export default function Client({ isNew }: { isNew: boolean }) {
     withUsername: true,
     value: "",
   });
+
   const [emojiSetup, setEmojiSetup] = useState<EmojiSetupType>({
     hasNitro: false,
     prevStep: 1,
@@ -70,6 +71,7 @@ export default function Client({ isNew }: { isNew: boolean }) {
             url: link.value,
             prefixed: link.withUsername,
           };
+
           const parsedEmoji = EmojiSchema.safeParse(emoji);
 
           if (!parsedEmoji.success) {

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formkit/auto-animate": "^0.8.1",
     "@icons-pack/react-simple-icons": "^9.4.0",
     "clsx": "^2.1.0",
     "lucide-react": "^0.363.0",

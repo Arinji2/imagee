@@ -1,5 +1,6 @@
-import z from "zod";
+import { z } from "zod";
 import { DISCORD_EMOJI_REGEX } from "./regex";
+
 export const EmojiSchema = z
   .object({
     displayName: z.string().min(1),
@@ -13,7 +14,6 @@ export const EmojiSchema = z
       })
       .transform((val) => {
         const newVal = val.split("?")[0];
-
         const url = new URL(newVal);
         url.searchParams.set("size", "160");
         url.searchParams.set("quality", "lossless");
@@ -24,6 +24,12 @@ export const EmojiSchema = z
   .refine((val) => !val.url.includes("/"), {
     message: "URL must not contain '/'",
   })
-  .refine((val) => !(val.prefixed && val.url.length <= 3), {
-    message: "URL must be at least 3 characters long if without username",
-  });
+  .refine(
+    (val) => {
+      if (!val.prefixed) return true; // If not prefixed, it passes the validation
+      return val.url.length > 3; // If prefixed, check length of URL
+    },
+    {
+      message: "URL must be at least 3 characters long if without username",
+    }
+  );
