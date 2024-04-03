@@ -2,7 +2,10 @@ import initPocketbase from "@/lib/initPocketbase";
 import { notFound } from "next/navigation";
 import sharp from "sharp";
 
-export async function GET({ params }: { params: { imgURL: string } }) {
+export async function GET(
+  request: Request,
+  { params }: { params: { imgURL: string } }
+) {
   const pb = await initPocketbase();
   try {
     const image = await pb
