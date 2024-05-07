@@ -75,7 +75,6 @@ export default async function AddNewEmoji({
         y2: 5.0,
         y3: 10.0,
       })
-      .blur(0.5)
       .webp({ quality: 100, lossless: true, force: true })
       .toBuffer();
     const resizedImageBlob = new Blob([resizedImage], { type: "image/webp" });
