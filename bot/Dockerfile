@@ -13,7 +13,7 @@ RUN npm install
 RUN npm run build
 
 # Starting our application
-CMD npm run start && tail -f /dev/null
+CMD ["sh", "-c", "npm run start && tail -f /dev/null"]
 
 # Exposing server port
 EXPOSE 5002
