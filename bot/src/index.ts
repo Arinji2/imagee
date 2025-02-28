@@ -19,7 +19,7 @@ const client = new Client({
 });
 
 client.on("ready", () => {
-  console.log(`Discord Bot is Online`);
+  console.log(`Discord Bot is Online with Username: ${client.user?.username}`);
   client.user?.setPresence({
     status: "online",
     activities: [
