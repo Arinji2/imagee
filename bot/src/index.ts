@@ -37,7 +37,7 @@ client.on("messageCreate", async (message) => {
   if (message.channel instanceof DMChannel) {
     if (message.content.indexOf(":") === -1) {
       await message.channel.send(
-        `Hiya, use this link to continue with your Imagee Setup:  https://cdn.discordapp.com/emojis/${message.content}.webp. Don't know what's going on? Check out our FAQ: https://imagee.arinji.com/faq?emoji`,
+        `Hiya, use this link to continue with your Imagee Setup:  https://cdn.discordapp.com/emojis/${message.content}.webp. Don't know what's going on? Check out our website on https://imagee.arinji.com`,
       );
       return;
     }
