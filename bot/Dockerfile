@@ -1,19 +1,32 @@
-# Fetching the minified node image on Alpine Linux
-FROM node:slim
+# Use the official Go image as a build stage
+FROM golang:1.23.5-alpine AS builder
+LABEL org.opencontainers.image.source="https://github.com/Arinji2/imagee"
 
-# Setting up the work directory
-WORKDIR /bot
+# Install build dependencies for CGO 
+RUN apk add --no-cache gcc musl-dev 
 
-# Copying all the files in our project
+# Set the working directory
+WORKDIR /app
+
+# Copy and download dependencies
+COPY go.mod go.sum ./
+RUN go mod download
+
+# Copy the rest of the source code
 COPY . .
 
+# Enable CGO and build with static linking
+ENV CGO_ENABLED=1 GOOS=linux GOARCH=amd64
+RUN go build -ldflags="-linkmode=external -extldflags=-static" -o main .
 
-# Installing dependencies
-RUN npm install
-RUN npm run build
+# Use a minimal runtime image
+FROM alpine:latest
 
-# Starting our application
-CMD ["sh", "-c", "npm run start && tail -f /dev/null"]
+# Set working directory
+WORKDIR /app
 
-# Exposing server port
-EXPOSE 5002
+# Copy the compiled binary
+COPY --from=builder /app/main .
+
+# Run the binary
+CMD ["./main"]
