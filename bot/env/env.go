@@ -7,13 +7,6 @@ import (
 	_ "github.com/joho/godotenv/autoload"
 )
 
-type Bot struct {
-	Token           string
-	GuildID         string
-	AllowedChannels []string
-	AllowedRoles    []string
-}
-
 type Env struct {
 	Token string
 }
